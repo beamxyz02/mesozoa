@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>Mesozoa — Daily Dinosaur Taxonomy Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#141210;
+  --panel-bg:#1e1a17;
+  --panel-border:#332c25;
+  --bone:#F2ECE0;
+  --bone-dim:#a9a297;
+  --amber:#D4AF37;
+  --amber-bright:#e8c655;
+  --green:#4e8547;
+  --red:#b5493f;
+  --radius:8px;
+  --radius-lg:12px;
+  --font-display:'Fraunces', serif;
+  --font-body:'IBM Plex Sans', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--bg-dark);color:var(--bone);font-family:var(--font-body);min-height:100vh;}
+a{color:var(--amber);}
+
+/* ============================= HEADER ============================= */
+header.top{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 24px; border-bottom:1px solid var(--panel-border); background:var(--panel-bg);
+}
+.brand{display:flex; align-items:center; gap:10px;}
+.brand h1{font-family:var(--font-display); font-size:24px; margin:0; color:var(--bone);}
+.brand .fossil-mark{color:var(--amber); font-size:20px;}
+.icon-row{display:flex; gap:8px;}
+.icon-btn{
+  background:transparent; border:1px solid var(--panel-border); color:var(--bone-dim);
+  width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:14px;
+}
+.icon-btn:hover{border-color:var(--amber); color:var(--amber);}
+
+/* ============================= LAYOUT ============================= */
+.app-container{
+  display:flex; height:calc(100vh - 61px); overflow:hidden;
+}
+
+/* Left Sidebar Panel */
+.sidebar {
+  width: 360px;
+  min-width: 320px;
+  background: transparent;       
+  border-right: none;             
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.puzzle-title{
+  font-family:var(--font-display); font-size:20px; font-weight:700; text-decoration:underline var(--red) 2px;
+  margin-bottom:4px;
+}
+.mode-toggle{
+  display:inline-flex; background:var(--bg-dark); border:1px solid var(--panel-border);
+  border-radius:999px; padding:2px; gap:2px; width:fit-content;
+}
+.mode-toggle button{
+  border:none; background:transparent; color:var(--bone-dim);
+  padding:4px 12px; border-radius:999px; cursor:pointer; font-size:12px; font-weight:500;
+}
+.mode-toggle button.active{background:var(--amber); color:var(--bg-dark); font-weight:600;}
+
+/* Search Input */
+.guess-box{position:relative;}
+.input-row{display:flex; gap:8px;}
+.input-row input{
+  flex:1; background:var(--bg-dark); border:1px solid var(--panel-border);
+  color:var(--bone); padding:10px; border-radius:var(--radius); font-size:14px;
+}
+.input-row input:focus{outline:none; border-color:var(--amber);}
+.btn{
+  border:none; cursor:pointer; font-weight:600; border-radius:var(--radius);
+  padding:0 16px; font-size:13px;
+}
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #5c9c54;
+}
+
+.btn-ghost {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--bone);
+  font-weight: 500;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.suggestions{
+  position:absolute; top:100%; left:0; right:0; background:var(--panel-bg);
+  border:1px solid var(--panel-border); border-radius:var(--radius);
+  max-height:200px; overflow-y:auto; z-index:100; display:none; margin-top:4px;
+}
+.suggestions.show{display:block;}
+.sugg-item{padding:8px 12px; cursor:pointer; font-size:13px; border-bottom:1px solid rgba(255,255,255,0.05);}
+.sugg-item:hover{background:rgba(212,175,55,0.15);}
+
+/* Info Card */
+.info-card {
+  background: transparent;       /* Removed inner box background */
+  border: none;                   /* Removed border box */
+  border-radius: var(--radius);
+  padding: 8px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--bone-dim);
+}
+
+.info-card h3 {
+  margin: 0 0 8px;
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.action-bar {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.action-bar .btn {
+  flex: 1;
+  padding: 10px;
+}
+
+/* ============================= BINARY TREE STYLING ============================= */
+.main-view {
+  flex: 1;
+  background: var(--bg-dark);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.tree-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  min-height: 400px;
+}
+
+/* SVG overlay layer for smooth curved connections */
+.tree-svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tree-step-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.tree-node-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  width: fit-content;
+  max-width: 220px;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.tree-node-box.clade {
+  background: #3c3821;
+  color: #e6dfa8;
+  border: 1px solid #635c34;
+}
+
+.tree-node-box.target {
+  background: var(--green);
+  color: #fff;
+  border: 2px solid var(--amber-bright);
+}
+
+.tree-node-box.unknown {
+  background: var(--panel-bg);
+  border: 2px dashed var(--panel-border);
+  color: var(--bone-dim);
+}
+
+.tree-node-box.guess {
+  background: var(--bone);
+  color: #1a1815;
+  border: 1px solid #d4ceb8;
+}
+
+/* Binary split container holding divergent choices */
+.binary-split {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.split-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* ============================= TREE ANIMATIONS ============================= */
+
+/* Node box initial hidden state & smooth transition */
+.tree-node-box {
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tree-node-box.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* SVG Line Drawing Styling */
+.tree-svg-layer path {
+  opacity: 0.9;
+}
+
+/* Modals */
+.modal-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,0.7); display:none;
+  align-items:center; justify-content:center; z-index:200;
+}
+.modal-overlay.show{display:flex;}
+.modal{
+  background:var(--panel-bg); border:1px solid var(--panel-border);
+  border-radius:var(--radius-lg); padding:24px; max-width:400px; width:100%;
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <span class="fossil-mark">☗</span>
+    <h1>Mesozoa</h1>
+  </div>
+  <div class="icon-row">
+    <button class="icon-btn" id="btnStats" title="Stats">📊</button>
+    <button class="icon-btn" id="btnHelp" title="Help">?</button>
+  </div>
+</header>
+
+<div class="app-container">
+  <aside class="sidebar">
+    <div>
+      <div class="puzzle-title" id="puzzleTag">Dinosaur #--</div>
+      <div class="mode-toggle">
+        <button id="modeDaily" class="active">Daily</button>
+        <button id="modeEndless">Endless</button>
+      </div>
+    </div>
+
+    <div class="guess-box">
+      <div style="font-size: 12px; color: var(--bone-dim); margin-bottom: 6px;">
+        Guess any species to begin! (<span id="guessCount">0</span> made)
+      </div>
+      <div class="input-row">
+        <input type="text" id="guessInput" placeholder="Type dinosaur name..." autocomplete="off">
+        <button class="btn btn-primary" id="btnSubmit">Guess</button>
+      </div>
+      <div class="suggestions" id="suggestions"></div>
+    </div>
+
+    <div class="info-card" id="infoCard">
+      <h3 id="infoTitle">Animalia (kingdom)</h3>
+      <p id="infoDesc">Multicellular, eukaryotic organisms that form the biological kingdom Animalia. Start guessing to trace down the evolutionary lineage!</p>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn btn-ghost" id="btnHint">💡 Hint</button>
+      <button class="btn btn-ghost" id="btnGiveUp">🏳 Give Up</button>
+      <button class="btn btn-ghost" id="btnNewEndless" style="display:none;">🔀 New</button>
+    </div>
+  </aside>
+
+  <main class="main-view">
+    <div id="treeTree" class="tree-container"></div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="statsModal">
+  <div class="modal">
+    <h2 style="margin-top:0; color:var(--amber);">Field Notes</h2>
+    <p>Played: <b id="statPlayed">0</b> | Wins: <b id="statWin">0</b></p>
+    <button class="btn btn-ghost" onclick="document.getElementById('statsModal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script src="archive.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* Game State */
+  let state = {
+    mode: "daily",
+    targetNode: null,
+    guesses: [],
+    finished: false
+  };
+
+  /* Daily Target Setup */
+  const DAILY_EPOCH = Date.UTC(2024, 0, 1);
+  function getDailyNum() {
+    return Math.floor((Date.now() - DAILY_EPOCH) / 86400000) + 1;
+  }
+  function getDailyTarget() {
+    return ARCHIVE_SPECIES[getDailyNum() % ARCHIVE_SPECIES.length];
+  }
+
+  function initGame() {
+    if (state.mode === "daily") {
+      state.targetNode = getDailyTarget();
+      document.getElementById("puzzleTag").textContent = `Dinosaur #${getDailyNum()}`;
+      document.getElementById("btnNewEndless").style.display = "none";
+    } else {
+      state.targetNode = ARCHIVE_SPECIES[Math.floor(Math.random() * ARCHIVE_SPECIES.length)];
+      document.getElementById("puzzleTag").textContent = "Endless Specimen";
+      document.getElementById("btnNewEndless").style.display = "block";
+    }
+    state.guesses = [];
+    state.finished = false;
+    render();
+  }
+
+  /* Rendering */
+  function render() {
+    document.getElementById("guessCount").textContent = state.guesses.length;
+    renderTree();
+    renderInfoCard();
+  }
+
+  function renderInfoCard() {
+    const lineage = getLineage(state.targetNode);
+    let deepestIdx = 0;
+    state.guesses.forEach(g => {
+      const idx = getMRCAIndex(g.node, state.targetNode);
+      if (idx > deepestIdx) deepestIdx = idx;
+    });
+
+    const activeNode = lineage[deepestIdx];
+    document.getElementById("infoTitle").textContent = `${activeNode.name} (${activeNode.rank})`;
+    document.getElementById("infoDesc").textContent = activeNode.desc || "No description available for this group.";
+  }
+
+  function renderTree() {
+    const container = document.getElementById("treeTree");
+    container.innerHTML = "";
+
+    // 1. Create overlay SVG layer
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "tree-svg-layer");
+    container.appendChild(svg);
+
+    const lineage = getLineage(state.targetNode);
+
+    // Collect all lineage levels unlocked by guesses
+    const revealedIndicesSet = new Set([0]);
+    state.guesses.forEach(g => {
+      const mrcaIdx = getMRCAIndex(g.node, state.targetNode);
+      if (mrcaIdx >= 0) revealedIndicesSet.add(mrcaIdx);
+    });
+
+    const sortedIndices = Array.from(revealedIndicesSet).sort((a, b) => a - b);
+    const lineConnections = [];
+    const nodeElements = [];
+
+    // 2. Build the Dichotomous Binary Tree
+    function buildBranchNode(indexInSorted) {
+      const lineageIdx = sortedIndices[indexInSorted];
+      const node = lineage[lineageIdx];
+      const isLastClade = (indexInSorted === sortedIndices.length - 1);
+
+      const stepRow = document.createElement("div");
+      stepRow.className = "tree-step-row";
+
+      // Clade box at top of this branch split
+      const cladeEl = document.createElement("div");
+      cladeEl.className = "tree-node-box clade";
+      cladeEl.textContent = node.name;
+      stepRow.appendChild(cladeEl);
+      nodeElements.push({ el: cladeEl, depth: indexInSorted });
+
+      // Collect wrong guesses that split off at this specific level
+      const sideGuesses = state.guesses.filter(g => 
+        getMRCAIndex(g.node, state.targetNode) === lineageIdx && g.node !== state.targetNode
+      );
+
+      let targetChildData = null;
+      let bottomEl = null;
+
+      if (!isLastClade) {
+        targetChildData = buildBranchNode(indexInSorted + 1);
+      } else {
+        bottomEl = document.createElement("div");
+        if (state.finished) {
+          bottomEl.className = "tree-node-box target";
+          bottomEl.textContent = state.targetNode.sci || state.targetNode.name;
+        } else {
+          bottomEl.className = "tree-node-box unknown";
+          bottomEl.textContent = "???";
+        }
+        nodeElements.push({ el: bottomEl, depth: indexInSorted + 1 });
+      }
+
+      if (sideGuesses.length > 0) {
+        const splitContainer = document.createElement("div");
+        splitContainer.className = "binary-split";
+
+        const leftBranch = document.createElement("div");
+        leftBranch.className = "split-branch";
+
+        const rightBranch = document.createElement("div");
+        rightBranch.className = "split-branch";
+
+        const wrongOnLeft = (indexInSorted % 2 === 0);
+        const wrongSideBranch = wrongOnLeft ? leftBranch : rightBranch;
+        const targetSideBranch = wrongOnLeft ? rightBranch : leftBranch;
+
+        sideGuesses.forEach(g => {
+          const gEl = document.createElement("div");
+          gEl.className = "tree-node-box guess";
+          gEl.textContent = g.node.sci || g.node.name;
+          wrongSideBranch.appendChild(gEl);
+          nodeElements.push({ el: gEl, depth: indexInSorted + 1 });
+
+          lineConnections.push({ parent: cladeEl, child: gEl, isGuess: true, depth: indexInSorted });
+        });
+
+        if (!isLastClade) {
+          targetSideBranch.appendChild(targetChildData.stepRow);
+          lineConnections.push({ parent: cladeEl, child: targetChildData.cladeEl, isGuess: false, depth: indexInSorted });
+        } else {
+          targetSideBranch.appendChild(bottomEl);
+          lineConnections.push({ parent: cladeEl, child: bottomEl, isGuess: false, depth: indexInSorted });
+        }
+
+        splitContainer.appendChild(leftBranch);
+        splitContainer.appendChild(rightBranch);
+        stepRow.appendChild(splitContainer);
+      } else {
+        const directBranch = document.createElement("div");
+        directBranch.className = "split-branch";
+        directBranch.style.marginTop = "30px";
+
+        if (!isLastClade) {
+          directBranch.appendChild(targetChildData.stepRow);
+          lineConnections.push({ parent: cladeEl, child: targetChildData.cladeEl, isGuess: false, depth: indexInSorted });
+        } else {
+          directBranch.appendChild(bottomEl);
+          lineConnections.push({ parent: cladeEl, child: bottomEl, isGuess: false, depth: indexInSorted });
+        }
+
+        stepRow.appendChild(directBranch);
+      }
+
+      return { stepRow, cladeEl };
+    }
+
+    const treeRoot = buildBranchNode(0);
+    container.appendChild(treeRoot.stepRow);
+
+    // 3. Draw and Animate SVG Connections + Box Fade-In
+    requestAnimationFrame(() => {
+      const containerRect = container.getBoundingClientRect();
+      
+      svg.setAttribute("width", containerRect.width);
+      svg.setAttribute("height", containerRect.height);
+
+      // Trigger box fade-ins with staggered delays
+      nodeElements.forEach(item => {
+        const delay = item.depth * 250;
+        setTimeout(() => {
+          item.el.classList.add("visible");
+        }, delay);
+      });
+
+      // Draw and animate SVG curve paths
+      lineConnections.forEach(conn => {
+        const pRect = conn.parent.getBoundingClientRect();
+        const cRect = conn.child.getBoundingClientRect();
+
+        const x1 = pRect.left + pRect.width / 2 - containerRect.left;
+        const y1 = pRect.bottom - containerRect.top;
+        const x2 = cRect.left + cRect.width / 2 - containerRect.left;
+        const y2 = cRect.top - containerRect.top;
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const deltaY = y2 - y1;
+
+        const cp1x = x1;
+        const cp1y = y1 + deltaY * 0.45;
+        const cp2x = x2;
+        const cp2y = y2 - deltaY * 0.45;
+
+        path.setAttribute("d", `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`);
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", conn.isGuess ? "#8a7e48" : "#e6dfa8");
+        path.setAttribute("stroke-width", conn.isGuess ? 2.5 : 3.5);
+        path.setAttribute("stroke-linecap", "round");
+
+        svg.appendChild(path);
+
+        // Measure path length
+        const length = path.getTotalLength();
+        
+        // 1) Prepare hidden stroke state
+        path.style.strokeDasharray = `${length}px`;
+        path.style.strokeDashoffset = `${length}px`;
+
+        // 2) Force browser reflow to lock initial hidden state
+        path.getBoundingClientRect();
+
+        // 3) Animate line drawing with depth delay
+        const lineDelay = conn.depth * 250;
+        path.style.transition = `stroke-dashoffset 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${lineDelay}ms`;
+        path.style.strokeDashoffset = "0px";
+      });
+    });
+  }
+
+  /* Interaction Logic */
+  function handleGuess(name) {
+    if (state.finished) return;
+    const node = ARCHIVE_MAP.get(name.toLowerCase());
+    if (!node) {
+      alert("Specimen not found in local archive.");
+      return;
+    }
+
+    if (!state.guesses.some(g => g.node === node)) {
+      state.guesses.push({ node });
+    }
+
+    if (node === state.targetNode) {
+      state.finished = true;
+      alert("Congratulations! You found the specimen!");
+    }
+
+    render();
+  }
+
+  /* Autocomplete */
+  const input = document.getElementById("guessInput");
+  const suggs = document.getElementById("suggestions");
+
+  input.addEventListener("input", () => {
+    const val = input.value.trim().toLowerCase();
+    suggs.innerHTML = "";
+    if (val.length < 2) { suggs.classList.remove("show"); return; }
+
+    const matches = ARCHIVE_SPECIES.filter(m => {
+      const nameMatch = m.name.toLowerCase().includes(val);
+      const sciMatch = m.sci && m.sci.toLowerCase().includes(val);
+      return nameMatch || sciMatch;
+    }).slice(0, 8);
+
+    if (matches.length > 0) {
+      matches.forEach(m => {
+        const d = document.createElement("div");
+        d.className = "sugg-item";
+        d.textContent = m.sci ? `${m.name} (${m.sci})` : m.name;
+        d.onclick = () => {
+          input.value = m.name;
+          suggs.classList.remove("show");
+          handleGuess(m.name);
+          input.value = "";
+        };
+        suggs.appendChild(d);
+      });
+      suggs.classList.add("show");
+    } else {
+      suggs.classList.remove("show");
+    }
+  });
+
+  /* Event Listeners */
+  document.getElementById("btnSubmit").onclick = () => {
+    handleGuess(input.value.trim());
+    input.value = "";
+    suggs.classList.remove("show");
+  };
+
+  document.getElementById("modeDaily").onclick = (e) => {
+    e.target.classList.add("active");
+    document.getElementById("modeEndless").classList.remove("active");
+    state.mode = "daily";
+    initGame();
+  };
+
+  document.getElementById("modeEndless").onclick = (e) => {
+    e.target.classList.add("active");
+    document.getElementById("modeDaily").classList.remove("active");
+    state.mode = "endless";
+    initGame();
+  };
+
+  document.getElementById("btnNewEndless").onclick = () => initGame();
+  document.getElementById("btnGiveUp").onclick = () => {
+    state.finished = true;
+    render();
+  };
+  document.getElementById("btnStats").onclick = () => {
+    document.getElementById("statsModal").classList.add("show");
+  };
+
+  /* Initialize */
+  initGame();
+})();
+</script>
+</body>
+</html>
