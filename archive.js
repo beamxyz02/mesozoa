@@ -46,22 +46,8 @@ const ARCHIVE_SPECIES = [
   ]
 },
   {
-    name: "Spinosaurus",
-    sci: "Spinosaurus aegyptiacus",
-    period: "Late Cretaceous",
-    mya: 99,
-    lineage: [
-      "Dinosauria",
-      "Saurischia",
-      "Theropoda",
-      "Megalosauroidea",
-      "Spinosauridae",
-      "Spinosaurus"
-    ]
-  },
-  {
   "name": "Spinosaurus",
-  "sci": "Spinosaurus is",
+  "sci": "Spinosaurus aegyptiacus",
   "period": "Late Cretaceous",
   "mya": 94,
   "lineage": [
@@ -81,7 +67,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Baryonyx",
-  "sci": "Baryonyx is",
+  "sci": "Baryonyx walkeri",
   "period": "Early Cretaceous",
   "mya": 125,
   "lineage": [
@@ -100,7 +86,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Iberospinus",
-  "sci": "Iberospinus is",
+  "sci": "Iberospinus natarioi",
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
@@ -118,7 +104,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Ceratosuchops",
-  "sci": "Ceratosuchops is",
+  "sci": "Ceratosuchops infernalis",
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
@@ -138,7 +124,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Suchomimus",
-  "sci": "Suchomimus is",
+  "sci": "Suchomimus tenerensis",
   "period": "Early Cretaceous",
   "mya": 112,
   "lineage": [
@@ -158,7 +144,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Ichthyovenator",
-  "sci": "Ichthyovenator is",
+  "sci": "Ichthyovenator laosensis",
   "period": "Early Cretaceous",
   "mya": 113,
   "lineage": [
@@ -177,7 +163,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Irritator",
-  "sci": "Irritator is",
+  "sci": "Irritator challengeri",
   "period": "Early Cretaceous",
   "mya": 110,
   "lineage": [
@@ -196,7 +182,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Siamosaurus",
-  "sci": "Siamosaurus is",
+  "sci": "Siamosaurus suteethorni",
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
@@ -214,7 +200,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Oxalaia",
-  "sci": "Oxalaia is",
+  "sci": "Oxalaia quilombensis",
   "period": "Late Cretaceous",
   "mya": 93,
   "lineage": [
@@ -234,7 +220,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Sigilmassasaurus",
-  "sci": "Sigilmassasaurus is",
+  "sci": "Sigilmassasaurus brevicollis",
   "period": "Late Cretaceous",
   "mya": 94,
   "lineage": [
@@ -254,7 +240,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Compsognathus",
-  "sci": "Compsognathus is",
+  "sci": "Compsognathus ellioti",
   "period": "Late Jurassic",
   "mya": 150,
   "lineage": [
@@ -272,7 +258,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Sinosauropteryx",
-  "sci": "Sinosauropteryx is",
+  "sci": "Sinosauropteryx prima",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -290,7 +276,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Maip",
-  "sci": "Maip is",
+  "sci": "Maip macrothorax",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -309,7 +295,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Australovenator",
-  "sci": "Australovenator is",
+  "sci": "Australovenator wintonensis",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -328,7 +314,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Megaraptor",
-  "sci": "Megaraptor is",
+  "sci": "Megaraptor namunhuaiquii",
   "period": "Late Cretaceous",
   "mya": 88,
   "lineage": [
@@ -347,7 +333,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Archaeornithomimus",
-  "sci": "Archaeornithomimus is",
+  "sci": "Archaeornithomimus asiaticus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -362,7 +348,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Gallimimus",
-  "sci": "Gallimimus is",
+  "sci": "Gallimimus bullatus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -377,7 +363,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Ornithomimus",
-  "sci": "Ornithomimus is",
+  "sci": "Ornithomimus edmontonicus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -392,7 +378,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Sinornithomimus",
-  "sci": "Sinornithomimus is",
+  "sci": "Sinornithomimus dongi",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -407,7 +393,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Struthiomimus",
-  "sci": "Struthiomimus is",
+  "sci": "Struthiomimus altus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -422,7 +408,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Deinocheirus",
-  "sci": "Deinocheirus is",
+  "sci": "Deinocheirus mirificus",
   "period": "Late Cretaceous",
   "mya": 70,
   "lineage": [
@@ -437,7 +423,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Moros",
-  "sci": "Moros Intrepidus",
+  "sci": "Moros intrepidus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -455,7 +441,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Yutyrannus",
-  "sci": "Yutyrannus is",
+  "sci": "Yutyrannus huali",
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
@@ -474,7 +460,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Guanlong",
-  "sci": "Guanlong is",
+  "sci": "Guanlong wucaii",
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
@@ -493,7 +479,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Nanotyrannus",
-  "sci": "Nanotyrannus is",
+  "sci": "Nanotyrannus lancensis",
   "period": "Late Cretaceous",
   "mya": 66,
   "lineage": [
@@ -512,7 +498,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Raptorex",
-  "sci": "Raptorex is",
+  "sci": "Raptorex kriegsteini",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -531,7 +517,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Nanuqsaurus",
-  "sci": "Nanuqsaurus is",
+  "sci": "Nanuqsaurus hoglundii",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -551,7 +537,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Alioramus",
-  "sci": "Alioramus is",
+  "sci": "Alioramus remotus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -572,7 +558,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Qianzhousaurus",
-  "sci": "Qianzhousaurus is",
+  "sci": "Qianzhousaurus sinensis",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -593,7 +579,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Daspletosaurus",
-  "sci": "Daspletosaurus is",
+  "sci": "Daspletosaurus torosus",
   "period": "Late Cretaceous",
   "mya": 74,
   "lineage": [
@@ -614,7 +600,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Lythronax",
-  "sci": "Lythronax is",
+  "sci": "Lythronax argestes",
   "period": "Late Cretaceous",
   "mya": 81,
   "lineage": [
@@ -635,7 +621,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Teratophoneus",
-  "sci": "Teratophoneus is",
+  "sci": "Teratophoneus curriei",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -656,7 +642,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Tarbosaurus",
-  "sci": "Tarbosaurus is",
+  "sci": "Tarbosaurus bataar",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -677,7 +663,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Albertosaurus",
-  "sci": "Albertosaurus is",
+  "sci": "Albertosaurus sarcophagus",
   "period": "Late Cretaceous",
   "mya": 71,
   "lineage": [
@@ -697,7 +683,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Gorgosaurus",
-  "sci": "Gorgosaurus is",
+  "sci": "Gorgosaurus libratus",
   "period": "Late Cretaceous",
   "mya": 73,
   "lineage": [
@@ -717,7 +703,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Mononykus",
-  "sci": "Mononykus is",
+  "sci": "Mononykus olecranus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -737,7 +723,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Monolophosaurus",
-  "sci": "Monolophosaurus is",
+  "sci": "Monolophosaurus jiangi",
   "period": "Middle Jurassic",
   "mya": 0,
   "lineage": [
@@ -754,7 +740,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Cryolophosaurus",
-  "sci": "Cryolophosaurus is",
+  "sci": "Cryolophosaurus ellioti",
   "period": "Early Jurassic",
   "mya": 0,
   "lineage": [
@@ -770,7 +756,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Duonychus",
-  "sci": "Duonychus is",
+  "sci": "Duonychus tsogtbaatari",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -791,7 +777,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Erlikosaurus",
-  "sci": "Erlikosaurus is",
+  "sci": "Erlikosaurus andrewsi",
   "period": "Late Cretaceous",
   "mya": 89,
   "lineage": [
@@ -812,7 +798,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Segnosaurus",
-  "sci": "Segnosaurus is",
+  "sci": "Segnosaurus galbinensis",
   "period": "Late Cretaceous",
   "mya": 86,
   "lineage": [
@@ -833,7 +819,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Therizinosaurus",
-  "sci": "Therizinosaurus is",
+  "sci": "Therizinosaurus cheloniformis",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -854,7 +840,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Oviraptor",
-  "sci": "Oviraptor is",
+  "sci": "Oviraptor philoceratops",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -874,7 +860,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Corythoraptor",
-  "sci": "Corythoraptor is",
+  "sci": "Corythoraptor jacobsi",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -894,7 +880,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Troodon",
-  "sci": "Troodon is",
+  "sci": "Troodon formosus",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -917,7 +903,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Austroraptor",
-  "sci": "Austroraptor is",
+  "sci": "Austroraptor cabazai",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -939,7 +925,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Pyroraptor",
-  "sci": "Pyroraptor is",
+  "sci": "Pyroraptor olympius",
   "period": "Late Cretaceous",
   "mya": 72,
   "lineage": [
@@ -960,7 +946,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Microraptor",
-  "sci": "Microraptor is",
+  "sci": "Microraptor zhaoianus",
   "period": "Early Cretaceous",
   "mya": 120,
   "lineage": [
@@ -1006,7 +992,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Atrociraptor",
-  "sci": "Atrociraptor is",
+  "sci": "Atrociraptor marshalli",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -1029,7 +1015,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Deinonychus",
-  "sci": "Deinonychus is",
+  "sci": "Deinonychus antirrhopus",
   "period": "Late Cretaceous",
   "mya": 98,
   "lineage": [
@@ -1051,7 +1037,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Dromaeosaurus",
-  "sci": "Dromaeosaurus is",
+  "sci": "Dromaeosaurus albertensis",
   "period": "Late Cretaceous",
   "mya": 69,
   "lineage": [
@@ -1074,7 +1060,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Saurornitholestes",
-  "sci": "Saurornitholestes is",
+  "sci": "Saurornitholestes langstoni",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -1097,7 +1083,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Velociraptor",
-  "sci": "Velociraptor is",
+  "sci": "Velociraptor mongoliensis",
   "period": "Late Cretaceous",
   "mya": 75,
   "lineage": [
@@ -1120,7 +1106,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Dakotaraptor",
-  "sci": "Dakotaraptor is",
+  "sci": "Dakotaraptor steini",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -1143,7 +1129,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Dilophosaurus",
-  "sci": "Dilophosaurus is",
+  "sci": "Dilophosaurus wetherilli",
   "period": "Early Jurassic",
   "mya": 186,
   "lineage": [
@@ -1157,7 +1143,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Megalosaurus",
-  "sci": "Megalosaurus is",
+  "sci": "Megalosaurus bucklandii",
   "period": "Middle Jurassic",
   "mya": 0,
   "lineage": [
@@ -1175,7 +1161,7 @@ const ARCHIVE_SPECIES = [
   ]
 },{
   "name": "Torvosaurus",
-  "sci": "Torvosaurus is",
+  "sci": "Torvosaurus tanneri",
   "period": "Late Jurassic",
   "mya": 146,
   "lineage": [
@@ -1194,7 +1180,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Allosaurus",
-  "sci": "Allosaurus is",
+  "sci": "Allosaurus fragilis",
   "period": "Late Jurassic",
   "mya": 143,
   "lineage": [
@@ -1212,7 +1198,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Yangchuanosaurus",
-  "sci": "Yangchuanosaurus is",
+  "sci": "Yangchuanosaurus shangyouensis",
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
@@ -1230,7 +1216,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Metriacanthosaurus",
-  "sci": "Metriacanthosaurus is",
+  "sci": "Metriacanthosaurus parkeri",
   "period": "Late Jurassic",
   "mya": 160,
   "lineage": [
@@ -1249,7 +1235,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Sinraptor",
-  "sci": "Sinraptor is",
+  "sci": "Sinraptor dongi",
   "period": "Jurassic",
   "mya": 0,
   "lineage": [
@@ -1268,7 +1254,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Concavenator",
-  "sci": "Concavenator is",
+  "sci": "Concavenator corcovatus",
   "period": "Early Cretaceous",
   "mya": 125,
   "lineage": [
@@ -1286,7 +1272,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Neovenator",
-  "sci": "Neovenator is",
+  "sci": "Neovenator salerii",
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
@@ -1304,7 +1290,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Acrocanthosaurus",
-  "sci": "Acrocanthosaurus is",
+  "sci": "Acrocanthosaurus atokensis",
   "period": "Late Cretaceous",
   "mya": 99,
   "lineage": [
@@ -1322,7 +1308,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Carcharodontosaurus",
-  "sci": "Carcharodontosaurus is",
+  "sci": "Carcharodontosaurus saharicus",
   "period": "Cretaceous",
   "mya": 94,
   "lineage": [
@@ -1340,7 +1326,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Giganotosaurus",
-  "sci": "Giganotosaurus is",
+  "sci": "Giganotosaurus carolini",
   "period": "Late Cretaceous",
   "mya": 95,
   "lineage": [
@@ -1358,7 +1344,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Mapusaurus",
-  "sci": "Mapusaurus is",
+  "sci": "Mapusaurus roseae",
   "period": "Late Cretaceous",
   "mya": 95,
   "lineage": [
@@ -1376,7 +1362,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Ceratosaurus",
-  "sci": "Ceratosaurus is",
+  "sci": "Ceratosaurus nasicornis",
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
@@ -1392,7 +1378,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Majungasaurus",
-  "sci": "Majungasaurus is",
+  "sci": "Majungasaurus crenatissimus",
   "period": "Cretaceous",
   "mya": 66,
   "lineage": [
@@ -1410,7 +1396,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Rajasaurus",
-  "sci": "Rajasaurus is",
+  "sci": "Rajasaurus narmadensis",
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
@@ -1428,7 +1414,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Carnotaurus",
-  "sci": "Carnotaurus is",
+  "sci": "Carnotaurus sastrei",
   "period": "Late Cretaceous",
   "mya": 66,
   "lineage": [
@@ -1447,7 +1433,7 @@ const ARCHIVE_SPECIES = [
 },
 {
   "name": "Utahraptor",
-  "sci": "Utahraptor is",
+  "sci": "Utahraptor ostrommaysi",
   "period": "Early Cretaceous",
   "mya": 135,
   "lineage": [
