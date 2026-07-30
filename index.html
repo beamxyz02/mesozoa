@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-<title>Mesozoa — Daily Dinosaur Taxonomy Game</title>
+<title>Mesozoa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -128,8 +128,8 @@ header.top{
 
 /* Info Card */
 .info-card {
-  background: transparent;       /* Removed inner box background */
-  border: none;                   /* Removed border box */
+  background: transparent;
+  border: none;
   border-radius: var(--radius);
   padding: 8px 0;
   font-size: 13px;
@@ -199,17 +199,25 @@ header.top{
 }
 
 .tree-node-box {
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 5px 10px;          /* Reduced padding inside boxes (was 8px 16px) */
+  border-radius: 6px;         /* Slightly smaller rounded corners (was 8px) */
   font-weight: 600;
-  font-size: 13px;
+  font-size: 11px;            /* Reduced font size (was 13px) */
   text-align: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
   width: fit-content;
-  max-width: 220px;
+  max-width: 160px;           /* Reduced maximum width (was 220px) */
   position: relative;
   z-index: 2;
   white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tree-node-box.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .tree-node-box.clade {
@@ -236,13 +244,14 @@ header.top{
   border: 1px solid #d4ceb8;
 }
 
-/* Binary split container holding divergent choices */
+/* Binary split container - keeps child branches centered and tight */
 .binary-split {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 40px;
-  margin-top: 40px;
+  justify-content: center;   /* Keep branches together in the middle */
+  align-items: flex-start;  /* Align tops of both branches on the Y-axis */
+  width: auto;              /* Don't force 100% width expansion */
+  gap: 24px;                /* Compact gap between left & right branches */
+  margin-top: 16px;         /* Tighter vertical distance from parent clade */
   position: relative;
 }
 
@@ -250,21 +259,17 @@ header.top{
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  flex: 0 0 auto;           /* Do NOT stretch branches to screen edges */
+  min-width: 100px;
 }
 
-/* ============================= TREE ANIMATIONS ============================= */
-
-/* Node box initial hidden state & smooth transition */
-.tree-node-box {
-  opacity: 0;
-  transform: translateY(8px) scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.tree-node-box.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+/* Container holding guessed species under a clade */
+.guesses-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;         /* Pulls guess boxes up close to parent clade */
 }
 
 /* SVG Line Drawing Styling */
@@ -376,6 +381,7 @@ header.top{
       document.getElementById("btnNewEndless").style.display = "block";
     }
     state.guesses = [];
+    state.hints = [];
     state.finished = false;
     render();
   }
@@ -411,12 +417,18 @@ header.top{
 
     const lineage = getLineage(state.targetNode);
 
-    // Collect all lineage levels unlocked by guesses
-    const revealedIndicesSet = new Set([0]);
+// Collect ONLY the specific MRCA indices revealed by the user's guesses
+    const revealedIndicesSet = new Set([0]); // Start at the root ancestor
     state.guesses.forEach(g => {
       const mrcaIdx = getMRCAIndex(g.node, state.targetNode);
-      if (mrcaIdx >= 0) revealedIndicesSet.add(mrcaIdx);
+      if (mrcaIdx >= 0) {
+        revealedIndicesSet.add(mrcaIdx);
+      }
     });
+
+    if (state.hints) {
+      state.hints.forEach(hIdx => revealedIndicesSet.add(hIdx));
+    }
 
     const sortedIndices = Array.from(revealedIndicesSet).sort((a, b) => a - b);
     const lineConnections = [];
@@ -474,16 +486,78 @@ header.top{
         const wrongSideBranch = wrongOnLeft ? leftBranch : rightBranch;
         const targetSideBranch = wrongOnLeft ? rightBranch : leftBranch;
 
+        // Group wrong guesses by their immediate next step
+        const groups = new Map();
         sideGuesses.forEach(g => {
-          const gEl = document.createElement("div");
-          gEl.className = "tree-node-box guess";
-          gEl.textContent = g.node.sci || g.node.name;
-          wrongSideBranch.appendChild(gEl);
-          nodeElements.push({ el: gEl, depth: indexInSorted + 1 });
+          const guessLineage = getLineage(g.node);
+          const nextIndex = lineageIdx + 1;
+          const stepKey = nextIndex < guessLineage.length ? guessLineage[nextIndex].name : g.node.name;
 
-          lineConnections.push({ parent: cladeEl, child: gEl, isGuess: true, depth: indexInSorted });
+          if (!groups.has(stepKey)) {
+            groups.set(stepKey, {
+              stepNode: nextIndex < guessLineage.length ? guessLineage[nextIndex] : null,
+              guesses: []
+            });
+          }
+          groups.get(stepKey).guesses.push(g.node);
         });
 
+        // Render each group of wrong guesses
+        groups.forEach((groupData) => {
+          const branchContainer = document.createElement("div");
+          branchContainer.className = "tree-step-row";
+          branchContainer.style.marginBottom = "12px";
+
+          let parentEl = cladeEl;
+
+          // If there is an intermediate clade step (e.g. Tyrannosaurini), render it
+          if (groupData.stepNode && groupData.stepNode.name !== groupData.guesses[0].name) {
+            const cladeNodeEl = document.createElement("div");
+            cladeNodeEl.className = "tree-node-box clade";
+            cladeNodeEl.textContent = groupData.stepNode.name;
+
+            branchContainer.appendChild(cladeNodeEl);
+
+            const stepDepth = indexInSorted + 1;
+            nodeElements.push({ el: cladeNodeEl, depth: stepDepth });
+
+            lineConnections.push({ 
+              parent: parentEl, 
+              child: cladeNodeEl, 
+              isGuess: true, 
+              depth: indexInSorted 
+            });
+
+            parentEl = cladeNodeEl;
+          }
+
+          // Container for guessed specimen boxes under this clade
+          const guessesContainer = document.createElement("div");
+          guessesContainer.className = "guesses-group";
+
+          groupData.guesses.forEach(guessNode => {
+            const guessNodeEl = document.createElement("div");
+            guessNodeEl.className = "tree-node-box guess";
+            guessNodeEl.textContent = guessNode.sci || guessNode.name;
+
+            guessesContainer.appendChild(guessNodeEl);
+
+            const finalDepth = indexInSorted + 2;
+            nodeElements.push({ el: guessNodeEl, depth: finalDepth });
+
+            lineConnections.push({ 
+              parent: parentEl, 
+              child: guessNodeEl, 
+              isGuess: true, 
+              depth: indexInSorted + 1 
+            });
+          });
+
+          branchContainer.appendChild(guessesContainer);
+          wrongSideBranch.appendChild(branchContainer);
+        });
+
+        // Render target branch
         if (!isLastClade) {
           targetSideBranch.appendChild(targetChildData.stepRow);
           lineConnections.push({ parent: cladeEl, child: targetChildData.cladeEl, isGuess: false, depth: indexInSorted });
@@ -558,17 +632,12 @@ header.top{
 
         svg.appendChild(path);
 
-        // Measure path length
         const length = path.getTotalLength();
-        
-        // 1) Prepare hidden stroke state
         path.style.strokeDasharray = `${length}px`;
         path.style.strokeDashoffset = `${length}px`;
 
-        // 2) Force browser reflow to lock initial hidden state
         path.getBoundingClientRect();
 
-        // 3) Animate line drawing with depth delay
         const lineDelay = conn.depth * 250;
         path.style.transition = `stroke-dashoffset 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${lineDelay}ms`;
         path.style.strokeDashoffset = "0px";
@@ -585,11 +654,11 @@ header.top{
       return;
     }
 
-    if (!state.guesses.some(g => g.node === node)) {
+    if (!state.guesses.some(g => g.node.name.toLowerCase() === node.name.toLowerCase())) {
       state.guesses.push({ node });
     }
 
-    if (node === state.targetNode) {
+    if (node.name.toLowerCase() === state.targetNode.name.toLowerCase()) {
       state.finished = true;
       alert("Congratulations! You found the specimen!");
     }
@@ -636,6 +705,36 @@ header.top{
     handleGuess(input.value.trim());
     input.value = "";
     suggs.classList.remove("show");
+  };
+
+  document.getElementById("btnHint").onclick = () => {
+    if (state.finished) return;
+
+    const lineage = getLineage(state.targetNode);
+
+    // Find the deepest index currently revealed (from guesses or previous hints)
+    let maxIdx = 0;
+    state.guesses.forEach(g => {
+      const idx = getMRCAIndex(g.node, state.targetNode);
+      if (idx > maxIdx) maxIdx = idx;
+    });
+    if (state.hints) {
+      state.hints.forEach(idx => {
+        if (idx > maxIdx) maxIdx = idx;
+      });
+    }
+
+    // Determine the next unrevealed clade step
+    const nextIdx = maxIdx + 1;
+
+    // Ensure we only reveal clade blocks and leave the final species hidden
+    if (nextIdx < lineage.length - 1) {
+      if (!state.hints) state.hints = [];
+      state.hints.push(nextIdx);
+      render();
+    } else {
+      alert("No further clade hints available before the final species!");
+    }
   };
 
   document.getElementById("modeDaily").onclick = (e) => {
