@@ -9,8 +9,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 66,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -24,35 +22,12 @@ const ARCHIVE_SPECIES = [
     "Tyrannosaurus"
   ]
 },
-{
-  "name": "Triceratops",
-  "sci": "Triceratops horridus",
-  "period": "Late Cretaceous",
-  "mya": 66,
-  "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
-    "Dinosauria",
-    "Ornithischia",
-    "Neornithischia",
-    "Pyrodontia",
-    "Cerapoda",
-    "Marginocephalia",
-    "Ceratopsia",
-    "Ceratopsidae",
-    "Chasmosaurinae",
-    "Triceratopsini",
-    "Triceratops"
-  ]
-},
   {
   "name": "Spinosaurus",
   "sci": "Spinosaurus aegyptiacus",
   "period": "Late Cretaceous",
   "mya": 94,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -71,8 +46,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 125,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -90,8 +63,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -108,8 +79,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -128,8 +97,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 112,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -148,8 +115,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 113,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -167,8 +132,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 110,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -186,8 +149,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -204,8 +165,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 93,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -224,8 +183,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 94,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -244,8 +201,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 150,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -262,8 +217,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -280,8 +233,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -299,8 +250,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -318,8 +267,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 88,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -337,8 +284,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -352,8 +297,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -367,8 +310,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -382,8 +323,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -397,8 +336,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -412,8 +349,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 70,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Ornithomimosauria",
@@ -427,8 +362,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -445,8 +378,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -464,8 +395,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -483,8 +412,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 66,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -502,8 +429,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -521,8 +446,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -541,8 +464,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -562,8 +483,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -583,8 +502,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 74,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -604,8 +521,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 81,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -625,8 +540,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -646,8 +559,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -667,8 +578,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 71,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -687,8 +596,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 73,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -707,8 +614,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -727,8 +632,6 @@ const ARCHIVE_SPECIES = [
   "period": "Middle Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -744,8 +647,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -760,8 +661,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -781,8 +680,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 89,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -802,8 +699,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 86,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -823,8 +718,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -844,8 +737,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -864,8 +755,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -884,8 +773,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -907,8 +794,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -929,8 +814,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 72,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -950,8 +833,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 120,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -973,8 +854,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 124,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -996,8 +875,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1019,8 +896,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 98,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1041,8 +916,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 69,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1064,8 +937,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1087,8 +958,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 75,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1110,8 +979,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1133,8 +1000,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Jurassic",
   "mya": 186,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1147,8 +1012,6 @@ const ARCHIVE_SPECIES = [
   "period": "Middle Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1165,8 +1028,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 146,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1184,8 +1045,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 143,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1202,8 +1061,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1220,8 +1077,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 160,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1239,8 +1094,6 @@ const ARCHIVE_SPECIES = [
   "period": "Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1258,8 +1111,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 125,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1276,8 +1127,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1294,8 +1143,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 99,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1312,8 +1159,6 @@ const ARCHIVE_SPECIES = [
   "period": "Cretaceous",
   "mya": 94,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1330,8 +1175,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 95,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1348,8 +1191,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 95,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1366,8 +1207,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Jurassic",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1382,8 +1221,6 @@ const ARCHIVE_SPECIES = [
   "period": "Cretaceous",
   "mya": 66,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1400,8 +1237,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 0,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1418,8 +1253,6 @@ const ARCHIVE_SPECIES = [
   "period": "Late Cretaceous",
   "mya": 66,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1437,8 +1270,6 @@ const ARCHIVE_SPECIES = [
   "period": "Early Cretaceous",
   "mya": 135,
   "lineage": [
-    "Dinosauromorpha",
-    "Dinosauriformes",
     "Dinosauria",
     "Theropoda",
     "Neotheropoda",
@@ -1452,7 +1283,1372 @@ const ARCHIVE_SPECIES = [
     "Eudromaeosauria",
     "Utahraptor"
   ]
+},
+// HERBIVORES
+{
+  "name": "Heterodontosaurus",
+  "sci": "Heterodontosaurus tucki",
+  "period": "Early Jurassic",
+  "mya": 190,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Heterodontosauridae",
+    "Heterodontosaurinae",
+    "Heterodontosaurus"
+  ]
+},
+{
+  "name": "Pegomastax",
+  "sci": "Pegomastax africanus",
+  "period": "Early Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Heterodontosauridae",
+    "Heterodontosaurinae",
+    "Pegomastax"
+  ]
+},
+{
+  "name": "Yuxisaurus",
+  "sci": "Yuxisaurus kopchicki",
+  "period": "Early Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Yuxisaurus"
+  ]
+},
+{
+  "name": "Scelidosaurus",
+  "sci": "Scelidosaurus harrisonii",
+  "period": "Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Scelidosaurus"
+  ]
+},
+{
+  "name": "Scutellosaurus",
+  "sci": "Scutellosaurus lawleri",
+  "period": "Jurassic",
+  "mya": 196,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Scutellosaurus"
+  ]
+},
+{
+  "name": "Chungkingosaurus",
+  "sci": "Chungkingosaurus jiangbeiensis",
+  "period": "Late Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Chungkingosaurus"
+  ]
+},
+{
+  "name": "Gigantspinosaurus",
+  "sci": "Gigantspinosaurus sichuanensis",
+  "period": "Late Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Huayangosauridae",
+    "Gigantspinosaurus"
+  ]
+},
+{
+  "name": "Tuojiangosaurus",
+  "sci": "Tuojiangosaurus multispinus",
+  "period": "Late Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Tuojiangosaurus"
+  ]
+},
+{
+  "name": "Huayangosaurus",
+  "sci": "Huayangosaurus taibaii",
+  "period": "Middle Jurassic",
+  "mya": 165,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Huayangosauridae",
+    "Huayangosaurus"
+  ]
+},
+{
+  "name": "Miragaia",
+  "sci": "Miragaia longicollum",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Neostegosauria",
+    "Dacentrurinae",
+    "Miragaia"
+  ]
+},
+{
+  "name": "Kentrosaurus",
+  "sci": "Kentrosaurus aethiopicus",
+  "period": "Late Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Neostegosauria",
+    "Kentrosaurus"
+  ]
+},
+{
+  "name": "Thyreosaurus",
+  "sci": "Thyreosaurus atlasicus",
+  "period": "Middle Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Neostegosauria",
+    "Dacentrurinae",
+    "Thyreosaurus"
+  ]
+},
+{
+  "name": "Stegosaurus",
+  "sci": "Stegosaurus stenops",
+  "period": "Late Jurassic",
+  "mya": 145,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Neostegosauria",
+    "Stegosaurinae",
+    "Stegosaurus"
+  ]
+},
+{
+  "name": "Wuerhosaurus",
+  "sci": "Wuerhosaurus homheni",
+  "period": "Early Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Stegosauria",
+    "Stegosauridae",
+    "Neostegosauria",
+    "Stegosaurinae",
+    "Wuerhosaurus"
+  ]
+},
+{
+  "name": "Gastonia",
+  "sci": "Gastonia burgei",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Gastonia"
+  ]
+},
+{
+  "name": "Borealopelta",
+  "sci": "Borealopelta markmitchelli",
+  "period": "Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Borealopelta"
+  ]
+},
+{
+  "name": "Nodosaurus",
+  "sci": "Nodosaurus textilis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Nodosaurus"
+  ]
+},
+{
+  "name": "Sauropelta",
+  "sci": "Sauropelta edwardsorum",
+  "period": "Early Cretaceous",
+  "mya": 108,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Sauropelta"
+  ]
+},
+{
+  "name": "Polacanthus",
+  "sci": "Polacanthus foxii",
+  "period": "Early Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Polacanthus"
+  ]
+},
+{
+  "name": "Denversaurus",
+  "sci": "Denversaurus schlessmani",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Nodosauridae",
+    "Denversaurus"
+  ]
+},
+{
+  "name": "Antarctopelta",
+  "sci": "Antarctopelta oliveroi",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Parankylosauria",
+    "Antarctopelta"
+  ]
+},
+{
+  "name": "Minmi",
+  "sci": "Minmi paravertebra",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Parankylosauria",
+    "Minmi"
+  ]
+},
+{
+  "name": "Crichtonsaurus",
+  "sci": "Crichtonsaurus bohlini",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Ankylosaurinae",
+    "Crichtonsaurus"
+  ]
+},
+{
+  "name": "Ankylosaurus",
+  "sci": "Ankylosaurus magniventris",
+  "period": "Cretaceous",
+  "mya": 66,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Ankylosauridae",
+    "Ankylosaurinae",
+    "Ankylosaurini",
+    "Ankylosaurus"
+  ]
+},
+{
+  "name": "Euoplocephalus",
+  "sci": "Euoplocephalus tutus",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Ankylosauridae",
+    "Ankylosaurinae",
+    "Ankylosaurini",
+    "Euoplocephalus"
+  ]
+},
+{
+  "name": "Scolosaurus",
+  "sci": "Scolosaurus",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Parapredentata",
+    "Saphornithischia",
+    "Prionodontia",
+    "Genasauria",
+    "Thyreophora",
+    "Thyreophoroidea",
+    "Eurypoda",
+    "Ankylosauria",
+    "Euankylosauria",
+    "Ankylosauridae",
+    "Ankylosaurinae",
+    "Ankylosaurini",
+    "Scolosaurus"
+  ]
+},
+{
+  "name": "Wannanosaurus",
+  "sci": "Wannanosaurus yansiensis",
+  "period": "Late Cretaceous",
+  "mya": 70,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Pachycephalosauria",
+    "Wannanosaurus"
+  ]
+},
+{
+  "name": "Zavacephale",
+  "sci": "Zavacephale rinpoche",
+  "period": "Early Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Pachycephalosauria",
+    "Zavacephale"
+  ]
+},
+{
+  "name": "Stegoceras",
+  "sci": "Stegoceras validum",
+  "period": "Late Cretaceous",
+  "mya": 74,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Pachycephalosauria",
+    "Pachycephalosauridae",
+    "Stegoceras"
+  ]
+},
+{
+"name": "Homalocephale",
+  "sci": "Homalocephale calathocercos",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Pachycephalosauria",
+    "Pachycephalosauridae",
+    "Pachycephalosaurinae",    
+    "Homalocephale"
+  ]
+},
+{
+  "name": "Pachycephalosaurus",
+  "sci": "Pachycephalosaurus wyomingensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Pachycephalosauria",
+    "Pachycephalosauridae",
+    "Pachycephalosaurinae",    
+    "Pachycephalosaurus"
+  ]
+},
+{
+  "name": "Psittacosaurus",
+  "sci": "Psittacosaurus mongoliensis",
+  "period": "Early Cretaceous",
+  "mya": 105,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Psittacosaurus"
+  ]
+},
+{
+  "name": "Koreaceratops",
+  "sci": "Koreaceratops hwaseongensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Neoceratopsia",
+    "Koreaceratops"
+  ]
+},
+{
+  "name": "Aquilops",
+  "sci": "Aquilops americanus",
+  "period": "Early Cretaceous",
+  "mya": 109,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Neoceratopsia",
+    "Aquilops"
+  ]
+},
+{
+  "name": "Microceratus",
+  "sci": "Microceratus gobiensis",
+  "period": "Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Neoceratopsia",
+    "Microceratus"
+  ]
+},
+{
+  "name": "Protoceratops",
+  "sci": "Protoceratops andrewsi",
+  "period": "Late Cretaceous",
+  "mya": 71,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Neoceratopsia",
+    "Coronosauria",
+    "Protoceratopsidae",
+    "Protoceratops"
+  ]
+},
+{
+  "name": "Chasmosaurus",
+  "sci": "Chasmosaurus belli",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Chasmosaurinae",
+    "Chasmosaurus"
+  ]
+},
+{
+  "name": "Pentaceratops",
+  "sci": "Pentaceratops sternbergii",
+  "period": "Late Cretaceous",
+  "mya": 73,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Chasmosaurinae",
+    "Pentaceratops"
+  ]
+},
+{
+  "name": "Triceratops",
+  "sci": "Triceratops horridus",
+  "period": "Late Cretaceous",
+  "mya": 66,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Chasmosaurinae",
+    "Triceratopsini",
+    "Triceratops"
+  ]
+},
+{
+  "name": "Torosaurus",
+  "sci": "Torosaurus latus",
+  "period": "Late Cretaceous",
+  "mya": 66,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Chasmosaurinae",
+    "Triceratopsini",
+    "Torosaurus"
+  ]
+},
+{
+  "name": "Diabloceratops",
+  "sci": "Diabloceratops eatoni",
+  "period": "Cretaceous",
+  "mya": 81,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Diabloceratops"
+  ]
+},
+{
+  "name": "Sinoceratops",
+  "sci": "Sinoceratops zhuchengensis",
+  "period": "Cretaceous",
+  "mya": 73,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Sinoceratops"
+  ]
+},
+{
+  "name": "Lokiceratops",
+  "sci": "Lokiceratops rangiformis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrasaurinae",
+    "Albertaceratopsini",
+    "Lokiceratops"
+  ]
+},
+{
+  "name": "Nasutoceratops",
+  "sci": "Nasutoceratops titusi",
+  "period": "Late Cretaceous",
+  "mya": 75,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Nasutoceratopsini",
+    "Nasutoceratops"
+  ]
+},
+{
+  "name": "Centrosaurus",
+  "sci": "Centrosaurus apertus",
+  "period": "Late Cretaceous",
+  "mya": 75,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Centrosaurini",
+    "Centrosaurus"
+  ]
+},
+{
+  "name": "Styracosaurus",
+  "sci": "Styracosaurus albertensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Centrosaurini",
+    "Styracosaurus"
+  ]
+},
+{
+  "name": "Einiosaurus",
+  "sci": "Einiosaurus procurvicornis",
+  "period": "Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Pachyrhinosaurini",
+    "Einiosaurus"
+  ]
+},
+{
+  "name": "Pachyrhinosaurus",
+  "sci": "Pachyrhinosaurus lakustai",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Marginocephalia",
+    "Ceratopsia",
+    "Ceratopsidae",
+    "Centrosaurinae",
+    "Pachyrhinosaurini",
+    "Pachyrostra",
+    "Pachyrhinosaurus"
+  ]
+},
+{
+  "name": "Muttaburrasaurus",
+  "sci": "Muttaburrasaurus langdoni",
+  "period": "Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Elasmaria",
+    "Muttaburrasaurus"
+  ]
+},
+{
+  "name": "Proceratosaurus",
+  "sci": "Proceratosaurus bradleyi",
+  "period": "Middle Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Theropoda",
+    "Neotheropoda",
+    "Averostra",
+    "Tetanurae",
+    "Coelurosauria",
+    "Tyrannosauroidea",
+    "Proceratosauridae",
+    "Proceratosaurus"
+  ]
+},
+{
+  "name": "Ouranosaurus",
+  "sci": "Ouranosaurus nigeriensis",
+  "period": "Early Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Ouranosaurus"
+  ]
+},
+{
+  "name": "Iguanodon",
+  "sci": "Iguanodon bernissartensis",
+  "period": "Early Cretaceous",
+  "mya": 122,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Iguanodontidae",
+    "Iguanodon"
+  ]
+},
+{
+  "name": "Dryosaurus",
+  "sci": "Dryosaurus altus",
+  "period": "Late Jurassic",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Dryosauridae",
+    "Dryosaurus"
+  ]
+},
+{
+  "name": "Tethyshadros",
+  "sci": "Tethyshadros insularis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Telmatosauridae",
+    "Tethyshadros"
+  ]
+},
+{
+  "name": "Eolambia",
+  "sci": "Eolambia caroljonesa",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Eolambia"
+  ]
+},
+{
+  "name": "Hadrosaurus",
+  "sci": "Hadrosaurus foulkii",
+  "period": "Late Cretaceous",
+  "mya": 77,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Hadrosaurus"
+  ]
+},
+{
+  "name": "Brachylophosaurus",
+  "sci": "Brachylophosaurus canadensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Brachylophosaurini",
+    "Brachylophosaurus"
+  ]
+},
+{
+  "name": "Maiasaura",
+  "sci": "Maiasaura peeblesorum",
+  "period": "Cretaceous",
+  "mya": 70,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Brachylophosaurini",
+    "Maiasaura"
+  ]
+},
+{
+  "name": "Edmontosaurus",
+  "sci": "Edmontosaurus annectens",
+  "period": "Cretaceous",
+  "mya": 73,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Edmontosaurini",
+    "Edmontosaurus"
+  ]
+},
+{
+  "name": "Shantungosaurus",
+  "sci": "Shantungosaurus giganteus",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Edmontosaurini",
+    "Shantungosaurus"
+  ]
+},
+{
+  "name": "Saurolophus",
+  "sci": "Saurolophus osborni",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Saurolophinae",
+    "Saurolophini",
+    "Saurolophus"
+  ]
+},
+{
+  "name": "Jaxartosaurus",
+  "sci": "Jaxartosaurus aralensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Jaxartosaurus"
+  ]
+},
+{
+  "name": "Tsintaosaurus",
+  "sci": "Tsintaosaurus spinorhinus",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Tsintaosaurini",
+    "Tsintaosaurus"
+  ]
+},
+{
+  "name": "Corythosaurus",
+  "sci": "Corythosaurus casuarius",
+  "period": "Late Cretaceous",
+  "mya": 75,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Corythosauria",
+    "Lambeosaurini",
+    "Corythosaurus"
+  ]
+},
+{
+  "name": "Lambeosaurus",
+  "sci": "Lambeosaurus lambei",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Corythosauria",
+    "Lambeosaurini",
+    "Lambeosaurus"
+  ]
+},
+{
+  "name": "Olorotitan",
+  "sci": "Olorotitan arharensis",
+  "period": "Late Cretaceous",
+  "mya": 0,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Corythosauria",
+    "Lambeosaurini",
+    "Olorotitan"
+  ]
+},
+{
+  "name": "Parasaurolophus",
+  "sci": "Parasaurolophus walkeri",
+  "period": "Late Cretaceous",
+  "mya": 73,
+  "lineage": [
+    "Dinosauria",
+    "Ornithischia",
+    "Neornithischia",
+    "Pyrodontia",
+    "Cerapoda",
+    "Ornithopoda",
+    "Iguanodontia",
+    "Euiguanodontia",
+    "Dryomorpha",
+    "Ankylopollexia",
+    "Styracosterna",
+    "Hadrosauriformes",
+    "Hadrosauroidea",
+    "Hadrosauridae",
+    "Lambeosaurinae",
+    "Corythosauria",
+    "Parasaurolophini",
+    "Parasaurolophus"
+  ]
 }
+
 ];
 
 /* =====================================================================
