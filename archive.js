@@ -1736,8 +1736,10 @@ const ARCHIVE_SPECIES = [
     "Genasauria",
     "Thyreophora",
     "Thyreophoroidea",
-    "Eurypoda",
+    "Eurypoda", 
     "Ankylosauria",
+    "Euankylosauria",
+    "Ankylosauridae",
     "Ankylosaurinae",
     "Crichtonsaurus"
   ]
