@@ -9,20 +9,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg-dark:#141210;
-  --panel-bg:#1e1a17;
-  --panel-border:#332c25;
-  --bone:#F2ECE0;
-  --bone-dim:#a9a297;
-  --amber:#D4AF37;
-  --amber-bright:#e8c655;
-  --green:#4e8547;
-  --red:#b5493f;
+  --bg-dark:#F7F3EE;       /* Warm light beige background */
+  --panel-bg:#EFE8E0;      /* Slightly darker rose-tinted beige for sidebars/modals */
+  --panel-border:#D8CDDF;  /* Soft dusty rose border */
+  --bone:#2A2321;          /* Deep warm slate for primary text (replaces light bone) */
+  --bone-dim:#6E635F;      /* Medium brownish-grey for secondary text */
+  --amber:#E06D28;          /* Rich warm orange */
+  --amber-bright:#FF8533;   /* Vibrant bright orange for highlights */
+  --green:#3D7A42;         /* Deep leaf green for target/success */
+  --red:#C84B31;           /* Warm terracotta red */
   --radius:8px;
   --radius-lg:12px;
   --font-display:'Fraunces', serif;
   --font-body:'IBM Plex Sans', sans-serif;
   --font-mono:'IBM Plex Mono', monospace;
+}
+
+/* Dark Mode Theme Overrides (Keeps orange/amber accents) */
+[data-theme="dark"] {
+  --bg-dark: #141210;         /* Black / Dark Slate Background */
+  --panel-bg: #1e1a17;        /* Dark Warm Panel Background */
+  --panel-border: #332c25;    /* Dark Muted Border */
+  --bone: #F2ECE0;            /* Light Warm Off-White Text */
+  --bone-dim: #a9a297;        /* Muted Light Text */
+}
+
+/* Adjust clade and guess node boxes when in dark mode */
+[data-theme="dark"] .tree-node-box.clade {
+  background: #2b241f;
+  color: #e8dfd5;
+  border: 1px solid #423830;
+}
+
+[data-theme="dark"] .tree-node-box.guess {
+  background: #1e1a17;
+  color: #F2ECE0;
+  border: 1px solid #332c25;
 }
 
 *{box-sizing:border-box;}
@@ -89,17 +111,17 @@ header.top{
   padding:0 16px; font-size:13px;
 }
 .btn-primary {
-  background: var(--green);
-  color: #fff;
+  background: var(--amber);
+  color: #ffffff;
   border: none;
   font-weight: 600;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .btn-primary:hover {
-  background: #5c9c54;
+  background: var(--amber-bright);
 }
 
 .btn-ghost {
@@ -200,7 +222,7 @@ header.top{
 
 .tree-node-box {
   padding: 5px 10px;          /* Reduced padding inside boxes (was 8px 16px) */
-  border-radius: 6px;         /* Slightly smaller rounded corners (was 8px) */
+  border-radius: 4px;         /* Slightly smaller rounded corners (was 8px) */
   font-weight: 600;
   font-size: 11px;            /* Reduced font size (was 13px) */
   text-align: center;
@@ -212,12 +234,12 @@ header.top{
   white-space: nowrap;
   opacity: 0;
   transform: translateY(8px) scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.85s ease, transform 0.85s ease;
 }
 
 .tree-node-box {
   cursor: pointer;
-  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: opacity 0.85s ease, transform 0.85s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tree-node-box:hover {
@@ -231,15 +253,15 @@ header.top{
 }
 
 .tree-node-box.clade {
-  background: #3c3821;
-  color: #e6dfa8;
-  border: 1px solid #635c34;
+background: #E8D5C8;
+  color: #3D2B24;
+  border: 1px solid #D1B8A8;
 }
 
 .tree-node-box.target {
   background: var(--green);
   color: #fff;
-  border: 2px solid var(--amber-bright);
+  border: 2px solid #45914b
 }
 
 .tree-node-box.unknown {
@@ -249,9 +271,9 @@ header.top{
 }
 
 .tree-node-box.guess {
-  background: var(--bone);
-  color: #1a1815;
-  border: 1px solid #d4ceb8;
+background: #FFFFFF;
+  color: #2A2321;
+  border: 1px solid #D8CDDF;
 }
 
 /* Binary split container - keeps child branches centered and tight */
@@ -260,8 +282,8 @@ header.top{
   justify-content: center;   /* Keep branches together in the middle */
   align-items: flex-start;  /* Align tops of both branches on the Y-axis */
   width: auto;              /* Don't force 100% width expansion */
-  gap: 24px;                /* Compact gap between left & right branches */
-  margin-top: 16px;         /* Tighter vertical distance from parent clade */
+  gap: 10px;                 /* was 24px — tighter gap = less outward sprawl */
+  margin-top: 10px;          /* was 16px — tighter vertical distance from parent clade */
   position: relative;
 }
 
@@ -270,7 +292,26 @@ header.top{
   flex-direction: column;
   align-items: center;
   flex: 0 0 auto;           /* Do NOT stretch branches to screen edges */
-  min-width: 100px;
+  min-width: 64px;           /* was 100px — dead-end offshoots no longer force wide gaps */
+}
+
+/* The branch that keeps going (contains the next clade split) — full strength */
+.split-branch.trunk-branch {
+  width: 200px;
+  min-width: 300px; /* overrides the 64px min-width from .split-branch */
+  overflow: visible;
+}
+/* No additional rules needed for trunk branches at this time. */
+
+/* The dead-end offshoot (a wrong guess with nothing below it) — visually
+   demoted: nudged down so it reads as a stub hanging off the descending
+   line rather than a second competing column, and slightly shrunk so the
+   eye keeps following the trunk instead of splitting attention evenly. */
+.split-branch.side-branch {
+  margin-top: 26px;
+  transform: scale(0.92);
+  transform-origin: top center;
+  opacity: 0.96;
 }
 
 /* Container holding guessed species under a clade */
@@ -278,7 +319,7 @@ header.top{
   display:flex;
   flex-direction:column;   /* was row + wrap — now explicit and predictable */
   align-items:center;
-  gap:8px;
+  gap:5px;                 /* was 8px — keeps stacked wrong guesses compact */
   margin-top:10px;
 }
 
@@ -325,35 +366,49 @@ header.top{
   font-size: 36px;
 }
 
+/* Stat Boxes Row Layout */
+/* Stat Boxes Horizontal Layout Fix */
 .stats-row {
-  display: flex;
-  justify-content: space-around;
-  margin: 16px 0 24px;
-  padding: 12px;
-  background: var(--bg-dark);
-  border-radius: var(--radius);
-  border: 1px solid var(--panel-border);
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  margin: 16px 0;
+  box-sizing: border-box;
 }
 
 .stat-box {
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 0px !important; /* Forces equal width columns side-by-side */
+  display: flex !important;
+  flex-direction: column !important;
   align-items: center;
+  justify-content: center;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 10px 4px;
+  text-align: center;
+  min-width: 0;
 }
 
 .stat-value {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--bone);
-  font-family: var(--font-mono);
+  color: var(--amber);
+  line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--bone-dim);
+  margin-top: 4px;
   text-transform: uppercase;
-  margin-top: 2px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
+
 
 .distribution-section {
   text-align: left;
@@ -430,10 +485,10 @@ header.top{
 
 <header class="top">
   <div class="brand">
-    <span class="fossil-mark">☗</span>
     <h1>Mesozoa</h1>
   </div>
   <div class="icon-row">
+    <button class="icon-btn" id="btnThemeToggle" title="Toggle Theme">🌙</button>
     <button class="icon-btn" id="btnStats" title="Stats">📊</button>
     <button class="icon-btn" id="btnHelp" title="Help">?</button>
   </div>
@@ -483,15 +538,59 @@ header.top{
 </div>
 
 <div class="modal-overlay" id="statsModal">
-  <div class="modal">
-    <h2 style="margin-top:0; color:var(--amber);">Field Notes</h2>
-    <p>Played: <b id="statPlayed">0</b> | Wins: <b id="statWin">0</b></p>
-    <button class="btn btn-ghost" onclick="document.getElementById('statsModal').classList.remove('show')">Close</button>
+  <div class="modal win-modal" style="position: relative;">
+    <button class="icon-btn" id="btnCloseStatsModal" title="Close" style="position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; font-size: 12px;">✕</button>
+    <h2 style="margin-top:0; color:var(--amber); font-family: var(--font-display);">Statistics</h2>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <span class="stat-value" id="statPlayed">0</span>
+        <span class="stat-label">Played</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value" id="statWinPct">0%</span>
+        <span class="stat-label">Win %</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value" id="statCurrentStreak">0</span>
+        <span class="stat-label">Current Streak</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value" id="statMaxStreak">0</span>
+        <span class="stat-label">Max Streak</span>
+      </div>
+    </div>
+
+    <div class="distribution-section">
+      <h4>Guess Distribution</h4>
+      <div id="statsDistribution" class="distribution-bars"></div>
+    </div>
+
+    <button class="btn btn-ghost" style="width:100%;" onclick="document.getElementById('statsModal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="helpModal">
+  <div class="modal" style="position: relative;">
+    <button class="icon-btn" id="btnCloseHelpModal" title="Close" style="position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; font-size: 12px;">✕</button>
+    <h2 style="margin-top:0; color:var(--amber); font-family: var(--font-display);">How to Play</h2>
+    <div style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+      <p><b>Goal:</b> Identify the mystery dinosaur in as few guesses as possible!</p>
+      <ul style="padding-left: 20px; margin: 8px 0;">
+        <li>Type any dinosaur name to place it on the evolutionary tree.</li>
+        <li>Correct higher-level groups will reveal themselves and narrow down the path.</li>
+        <li>Use <b>Hint</b> if you get stuck to reveal the next clade level.</li>
+        <li>A new <b>Daily</b> puzzle appears every 24 hours, or play infinite games in <b>Endless</b> mode!</li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" style="width: 100%; margin-top: 16px;" onclick="document.getElementById('helpModal').classList.remove('show')">Got it!</button>
   </div>
 </div>
 
 <div class="modal-overlay" id="winModal">
-  <div class="modal win-modal">
+  <div class="modal win-modal" style="position: relative;">
+    <button class="icon-btn" id="btnCloseWinModal" title="Close" style="position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; font-size: 12px;">✕</button>
+
     <div class="win-header">
       <h2 id="endGameTitle">Specimen Identified!</h2>
       <p id="winSpecimenName" class="win-specimen-name">Tyrannosaurus rex</p>
@@ -546,52 +645,156 @@ header.top{
     return ARCHIVE_SPECIES[getDailyNum() % ARCHIVE_SPECIES.length];
   }
 
+  function getDailyKey() {
+    return `mesozoa_daily_${getDailyNum()}`;
+  }
+
+  function saveDailyState() {
+    if (state.mode === "daily") {
+      localStorage.setItem(getDailyKey(), JSON.stringify({
+        guesses: state.guesses,
+        hints: state.hints,
+        finished: state.finished
+      }));
+    }
+  }
+
   function initGame() {
     if (state.mode === "daily") {
       state.targetNode = getDailyTarget();
       document.getElementById("puzzleTag").textContent = `Dinosaur #${getDailyNum()}`;
       document.getElementById("btnNewEndless").style.display = "none";
+
+      const saved = localStorage.getItem(getDailyKey());
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        state.guesses = parsed.guesses || [];
+        state.hints = parsed.hints || [];
+        state.finished = !!parsed.finished;
+      } else {
+        state.guesses = [];
+        state.hints = [];
+        state.finished = false;
+      }
     } else {
       state.targetNode = ARCHIVE_SPECIES[Math.floor(Math.random() * ARCHIVE_SPECIES.length)];
       document.getElementById("puzzleTag").textContent = "Endless Specimen";
       document.getElementById("btnNewEndless").style.display = "block";
+      state.guesses = [];
+      state.hints = [];
+      state.finished = false;
     }
-    state.guesses = [];
-    state.hints = [];
-    state.finished = false;
     render();
   }
 
-  // Load stats from localStorage
-  function getStats() {
+function getStats() {
     const saved = localStorage.getItem("mesozoa_stats");
     return saved ? JSON.parse(saved) : {
+      played: 0,
       totalWins: 0,
       currentStreak: 0,
-      distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, "6+": 0 }
+      maxStreak: 0,
+      distribution: { "1": 0, "2+":0,"4+":0, "7+":0, "9+":0, "15+":0 }
     };
   }
 
-  // Save win stats
+  function getGuessBucket(count) {
+    if (count === 1) return "1";
+    if (count >= 2 && count <= 3) return "2+";
+    if (count >= 4 && count <= 6) return "4+";
+    if (count >= 7 && count <= 9) return "7+";
+    if (count >= 9 && count <= 15) return "9+";
+    return "15+";
+  }
+
   function recordWin(guessCount) {
     const stats = getStats();
-    stats.totalWins += 1;
-    stats.currentStreak += 1;
+    stats.played = (stats.played || 0) + 1;
+    stats.totalWins = (stats.totalWins || 0) + 1;
+    stats.currentStreak = (stats.currentStreak || 0) + 1;
+    if (stats.currentStreak > (stats.maxStreak || 0)) {
+      stats.maxStreak = stats.currentStreak;
+    }
 
-    const bucket = guessCount <= 5 ? guessCount.toString() : "6+";
+    const bucket = getGuessBucket(guessCount);
+    if (!stats.distribution) {
+      stats.distribution = { "1": 0, "2+":0,"4+":0, "7+":0, "9+":0, "15+":0 }
+    }
     stats.distribution[bucket] = (stats.distribution[bucket] || 0) + 1;
 
     localStorage.setItem("mesozoa_stats", JSON.stringify(stats));
     return stats;
   }
 
+  // Save loss/give up (resets current streak)
+  function recordLoss() {
+    const stats = getStats();
+    stats.played = (stats.played || 0) + 1;
+    stats.currentStreak = 0;
+    localStorage.setItem("mesozoa_stats", JSON.stringify(stats));
+    return stats;
+  }
+
+  // Helper to render stats in modal
+function populateStatsModal() {
+    const stats = getStats();
+    const winPct = stats.played > 0 ? Math.round((stats.totalWins / stats.played) * 100) : 0;
+
+    document.getElementById("statPlayed").textContent = stats.played;
+    document.getElementById("statWinPct").textContent = `${winPct}%`;
+    document.getElementById("statCurrentStreak").textContent = stats.currentStreak;
+    document.getElementById("statMaxStreak").textContent = stats.maxStreak || 0;
+
+    const distContainer = document.getElementById("statsDistribution");
+    distContainer.innerHTML = "";
+
+    const buckets = ["1", "2+", "4+", "7+", "9+", "15+"];
+    const maxVal = Math.max(...buckets.map(b => (stats.distribution && stats.distribution[b]) || 0), 1);
+
+    buckets.forEach(key => {
+      const count = (stats.distribution && stats.distribution[key]) || 0;
+      const pct = Math.max((count / maxVal) * 100, 8);
+
+      const row = document.createElement("div");
+      row.className = "dist-bar-row";
+      row.innerHTML = `
+        <span class="dist-bar-num">${key}</span>
+        <div class="dist-bar-track">
+          <div class="dist-bar-fill" style="width: ${pct}%">
+            ${count}
+          </div>
+        </div>
+      `;
+      distContainer.appendChild(row);
+    });
+  }
+
   /* Rendering */
-  function render() {
+function render() {
     document.getElementById("guessCount").textContent = state.guesses.length;
     renderTree();
     renderInfoCard();
-  }
 
+    const input = document.getElementById("guessInput");
+    const btnSubmit = document.getElementById("btnSubmit");
+    const btnHint = document.getElementById("btnHint");
+    const btnGiveUp = document.getElementById("btnGiveUp");
+
+    if (state.finished) {
+      input.disabled = true;
+      input.placeholder = state.mode === "daily" ? "Daily completed!" : "Game completed";
+      btnSubmit.disabled = true;
+      btnHint.disabled = true;
+      btnGiveUp.disabled = true;
+    } else {
+      input.disabled = false;
+      input.placeholder = "Type dinosaur name...";
+      btnSubmit.disabled = false;
+      btnHint.disabled = false;
+      btnGiveUp.disabled = false;
+    }
+  }
+  
   async function updateWikiInfo(taxon) {
     const descEl = document.getElementById("wikiText");
     const linkEl = document.getElementById("wikiLink");
@@ -767,6 +970,13 @@ function renderInfoCard() {
         const wrongSideBranch = wrongOnLeft ? leftBranch : rightBranch;
         const targetSideBranch = wrongOnLeft ? rightBranch : leftBranch;
 
+        // Tag branches: the trunk keeps descending, the offshoot is a dead end.
+        // CSS uses this to shrink/drop the offshoot so it reads as a stub off
+        // the main line instead of an equal competing column (this is what
+        // was causing the tree to blow outward instead of downward).
+        wrongSideBranch.classList.add("side-branch");
+        targetSideBranch.classList.add("trunk-branch");
+
         // Group wrong guesses by their immediate next step
         const groups = new Map();
         sideGuesses.forEach(g => {
@@ -927,6 +1137,9 @@ requestAnimationFrame(() => {
     item.rowIndex = rowIndexForTop(item.top);
   });
 
+  const rowIndexByEl = new Map();
+  nodeElements.forEach(item => rowIndexByEl.set(item.el, item.rowIndex));
+
   // --- Fade in boxes strictly top to bottom ---
   nodeElements.forEach(item => {
     const delay = item.rowIndex * STAGGER_MS;
@@ -947,20 +1160,29 @@ lineConnections.forEach(conn => {
 
   let d;
   if (conn.style === "stem") {
-    // Short elbow connector between stacked siblings — no wide curve needed
-    const midY = (y1 + y2) / 2;
-    d = `M ${x1} ${y1} L ${x1} ${midY} L ${x2} ${midY} L ${x2} ${y2}`;
-  } else {
-    const deltaY = y2 - y1;
-    const cp1x = x1, cp1y = y1 + deltaY * 0.45;
-    const cp2x = x2, cp2y = y2 - deltaY * 0.45;
+    // Gentle curve between stacked siblings instead of a hard right-angle
+    // elbow — reads much softer when two guesses stack under one clade.
+    const deltaY = Math.max(y2 - y1, 1);
+    const bend = Math.min(deltaY * 0.5, 14);
+    const cp1x = x1, cp1y = y1 + bend;
+    const cp2x = x2, cp2y = y2 - bend;
+    d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
+} else {
+    const deltaY = Math.max(y2 - y1, 0);       // never negative
+    const bend = Math.min(deltaY * 0.55, 30);   // capped so long drops don't
+                                                 // over-curve, and can never
+                                                 // exceed deltaY itself — that
+                                                 // guarantee is what stops the
+                                                 // control points from
+                                                 // overshooting into a loop
+    const cp1x = x1, cp1y = y1 + bend;
+    const cp2x = x2, cp2y = y2 - bend;
     d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
   }
-
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("d", d);
   path.setAttribute("fill", "none");
-  path.setAttribute("stroke", conn.isGuess ? "#8a7e48" : "#e6dfa8");
+  path.setAttribute("stroke", conn.isGuess ? "#B37A56" : "#E06D28");
   path.setAttribute("stroke-width", conn.style === "stem" ? 1.5 : (conn.isGuess ? 2.5 : 3.5));
   path.setAttribute("stroke-linecap", "round");
   svg.appendChild(path);
@@ -970,15 +1192,15 @@ lineConnections.forEach(conn => {
   path.style.strokeDashoffset = `${length}px`;
   path.getBoundingClientRect();
 
-  const lineDelay = conn.depth * 250; // or your row-based delay from before
-  path.style.transition = `stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${lineDelay}ms`;
+    const lineDelay = rowIndexByEl.get(conn.child) * STAGGER_MS;
+  path.style.transition = `stroke-dashoffset 0.9s cubic-bezier(0.4, 0, 0.2, 1) ${lineDelay}ms`;
   path.style.strokeDashoffset = "0px";
 });
   });
   }
 
   /* Interaction Logic */
-  function handleGuess(name) {
+function handleGuess(name) {
     if (state.finished) return;
     const node = ARCHIVE_MAP.get(name.toLowerCase());
     if (!node) {
@@ -990,13 +1212,15 @@ lineConnections.forEach(conn => {
       state.guesses.push({ node });
     }
 
-/* Replace alert in handleGuess */
-  if (node.name.toLowerCase() === state.targetNode.name.toLowerCase()) {
-    state.finished = true;
-    render();
-    setTimeout(() => showEndGameModal(true), 600);
-  }
+    if (node.name.toLowerCase() === state.targetNode.name.toLowerCase()) {
+      state.finished = true;
+      saveDailyState();
+      render();
+      setTimeout(() => showEndGameModal(true), 600);
+      return;
+    }
 
+    saveDailyState();
     render();
   }
 
@@ -1034,15 +1258,7 @@ lineConnections.forEach(conn => {
     }
   });
 
-  // Save loss/give up (resets current streak)
-  function recordLoss() {
-    const stats = getStats();
-    stats.currentStreak = 0;
-    localStorage.setItem("mesozoa_stats", JSON.stringify(stats));
-    return stats;
-  }
-
-  // Unified End Game Modal Handler (Handles both Win and Loss)
+// Unified End Game Modal Handler (Handles both Win and Loss)
   function showEndGameModal(isWin = true) {
     const stats = isWin ? recordWin(state.guesses.length) : recordLoss();
 
@@ -1059,11 +1275,12 @@ lineConnections.forEach(conn => {
     const distContainer = document.getElementById("guessDistribution");
     distContainer.innerHTML = "";
 
-    const maxVal = Math.max(...Object.values(stats.distribution), 1);
-    const currentBucket = state.guesses.length <= 5 ? state.guesses.length.toString() : "6+";
+    const buckets = ["1", "2+", "4+", "7+", "9+", "15+"];
+    const maxVal = Math.max(...buckets.map(b => (stats.distribution && stats.distribution[b]) || 0), 1);
+    const currentBucket = getGuessBucket(state.guesses.length);
 
-    ["1", "2", "3", "4", "5", "6+"].forEach(key => {
-      const count = stats.distribution[key] || 0;
+    buckets.forEach(key => {
+      const count = (stats.distribution && stats.distribution[key]) || 0;
       const pct = Math.max((count / maxVal) * 100, 8);
       const isCurrent = isWin && (key === currentBucket);
 
@@ -1080,6 +1297,7 @@ lineConnections.forEach(conn => {
       distContainer.appendChild(row);
     });
 
+    document.getElementById("btnPlayAgain").textContent = state.mode === "daily" ? "Play Endless" : "Play Again";
     document.getElementById("winModal").classList.add("show");
   }
 
@@ -1091,7 +1309,7 @@ lineConnections.forEach(conn => {
       ? "Gave Up" 
       : `Solved in ${numGuesses} guess(es)`;
 
-    const shareText = `🦴 Mesozoa Specimen\n🦖 Specimen: ${dinoName}\n Status: ${statusText}\n Streak: ${getStats().currentStreak}\n\nPlay at: ${window.location.href}`;
+    const shareText = `🦴 Mesozoa Specimen 🦖\n Specimen: ${dinoName}\n Status: ${statusText}\n Streak: ${getStats().currentStreak}\n\nPlay at: ${window.location.href}`;
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(shareText).then(() => {
@@ -1115,7 +1333,6 @@ document.getElementById("btnHint").onclick = () => {
 
     const lineage = getLineage(state.targetNode);
 
-    // Find the deepest index currently revealed (from guesses or previous hints)
     let maxIdx = 0;
     state.guesses.forEach(g => {
       const idx = getMRCAIndex(g.node, state.targetNode);
@@ -1127,17 +1344,14 @@ document.getElementById("btnHint").onclick = () => {
       });
     }
 
-    // Determine the next unrevealed clade step
     const nextIdx = maxIdx + 1;
 
-    // Ensure we only reveal clade blocks and leave the final species hidden
     if (nextIdx < lineage.length - 1) {
       if (!state.hints) state.hints = [];
       state.hints.push(nextIdx);
 
-      // Re-render the tree and update the sidebar info card
+      saveDailyState();
       render();
-      renderInfoCard();
     } else {
       alert("No further clade hints available before the final species!");
     }
@@ -1167,13 +1381,62 @@ document.getElementById("btnGiveUp").onclick = () => {
   };
 
   // Handle Play Again button inside the modal
-  document.getElementById("btnPlayAgain").onclick = () => {
+document.getElementById("btnPlayAgain").onclick = () => {
     document.getElementById("winModal").classList.remove("show");
-    initGame();
+    if (state.mode === "daily") {
+      document.getElementById("modeEndless").click();
+    } else {
+      initGame();
+    }
   };
 
+  // Theme Toggle Handler
+  const btnTheme = document.getElementById("btnThemeToggle");
+
+  // Load saved preference or default to light/dark
+  const savedTheme = localStorage.getItem("mesozoa_theme") || "light";
+  if (savedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    if (btnTheme) btnTheme.textContent = "☀️";
+  }
+
+  if (btnTheme) {
+    btnTheme.onclick = () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("mesozoa_theme", "light");
+        btnTheme.textContent = "🌙";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("mesozoa_theme", "dark");
+        btnTheme.textContent = "☀️";
+      }
+    };
+  }
+
+ // Stats Button Handler
   document.getElementById("btnStats").onclick = () => {
+    populateStatsModal();
     document.getElementById("statsModal").classList.add("show");
+  };
+
+  document.getElementById("btnCloseStatsModal").onclick = () => {
+    document.getElementById("statsModal").classList.remove("show");
+  };
+
+  // Help Button Handler
+  document.getElementById("btnHelp").onclick = () => {
+    document.getElementById("helpModal").classList.add("show");
+  };
+
+  document.getElementById("btnCloseHelpModal").onclick = () => {
+    document.getElementById("helpModal").classList.remove("show");
+  };
+
+  // Close End Game Modal to view the tree
+  document.getElementById("btnCloseWinModal").onclick = () => {
+    document.getElementById("winModal").classList.remove("show");
   };
 
   /* Initialize */
